@@ -53,7 +53,7 @@ const UIEdgeInsets textInsetsSomeone = {5, 15, 11, 10};
 
 - (id)initWithText:(NSString *)text date:(NSDate *)date type:(NSBubbleType)type
 {
-    UIFont *font = [UIFont fontWithName:@"Trebuchet MS" size:14];
+    UIFont *font = [UIFont systemFontOfSize:14];//[UIFont fontWithName:@"Trebuchet MS" size:14];
     CGSize size = [(text ? text: @"") boundingRectWithSize:CGSizeMake(220, 9999) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: font} context:nil].size;
 //    CGSize size = [(text ? text : @"") sizeWithFont:font constrainedToSize:CGSizeMake(220, 9999) lineBreakMode:NSLineBreakByWordWrapping];
     

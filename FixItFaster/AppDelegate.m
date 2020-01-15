@@ -7,9 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "IQKeyboardManager.h"
+@import Firebase;
 
-@interface AppDelegate ()
-
+@interface AppDelegate () <CLLocationManagerDelegate>
+{
+    CLLocationManager *locationManager;
+}
 @end
 
 @implementation AppDelegate
@@ -17,7 +21,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[IQKeyboardManager sharedManager] setEnable:YES];
+    [self configureLocation];
+    [FIRApp configure];
     return YES;
+}
+
+- (void)configureLocation {
+    locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
+    locationManager.delegate = self; // we set the delegate of locationManager to self.
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest; // setting the accuracy
+    [locationManager requestAlwaysAuthorization];
+    [locationManager startUpdatingLocation];  //requesting location updates
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    CLLocation *location = [locations lastObject];
+    self.userLocation = location;
+    NSLog(@"Location: %@", location);
 }
 
 

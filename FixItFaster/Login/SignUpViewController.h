@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SignUpViewController : UIViewController
+@interface SignUpViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIView *emailView;
 @property (weak, nonatomic) IBOutlet UIView *pwdView;
 @property (weak, nonatomic) IBOutlet UIView *confirmPwdView;

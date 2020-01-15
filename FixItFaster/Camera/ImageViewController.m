@@ -13,7 +13,6 @@
 @interface ImageViewController ()
 @property (strong, nonatomic) UIImage *image;
 @property (strong, nonatomic) UIImageView *imageView;
-@property (strong, nonatomic) UILabel *infoLabel;
 @property (strong, nonatomic) UIButton *cancelButton;
 @end
 
@@ -41,22 +40,9 @@
     self.imageView.image = self.image;
     [self.view addSubview:self.imageView];
     
-    NSString *info = [NSString stringWithFormat:@"Size: %@  -  Orientation: %ld", NSStringFromCGSize(self.image.size), (long)self.image.imageOrientation];
-    
-    self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
-    self.infoLabel.backgroundColor = [[UIColor darkGrayColor] colorWithAlphaComponent:0.7];
-    self.infoLabel.textColor = [UIColor whiteColor];
-    self.infoLabel.font = [UIFont fontWithName:@"AvenirNext-Regular" size:13];
-    self.infoLabel.textAlignment = NSTextAlignmentCenter;
-    self.infoLabel.text = info;
-    [self.view addSubview:self.infoLabel];
-    
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
-    [self.view addGestureRecognizer:tapGesture];
-}
-
-- (void)viewTapped:(UIGestureRecognizer *)gesture {
-    [self dismissViewControllerAnimated:NO completion:nil];
+    [self.view addSubview:self.cancelButton];
+    [self.cancelButton addTarget:self action:@selector(cancelButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    self.cancelButton.frame = CGRectMake(0, 16, 50, 50);
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -66,12 +52,33 @@
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    self.imageView.frame = self.view.contentBounds;
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    self.imageView.frame = CGRectMake(0, 0, screenRect.size.width, screenRect.size.height);//self.view.contentBounds;
+}
+
+- (UIButton *)cancelButton {
+    if(!_cancelButton) {
+        UIImage *cancelImage = [UIImage imageNamed:@"cancel.png"];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        button.tintColor = [UIColor whiteColor];
+        [button setImage:cancelImage forState:UIControlStateNormal];
+        button.imageView.clipsToBounds = NO;
+        button.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+        button.layer.shadowColor = [UIColor blackColor].CGColor;
+        button.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+        button.layer.shadowOpacity = 0.4f;
+        button.layer.shadowRadius = 1.0f;
+        button.clipsToBounds = NO;
+        
+        _cancelButton = button;
+    }
     
-    [self.infoLabel sizeToFit];
-    self.infoLabel.width = self.view.contentBounds.size.width;
-    self.infoLabel.top = 0;
-    self.infoLabel.left = 0;
+    return _cancelButton;
+}
+
+- (void)cancelButtonPressed:(UIButton *)button {
+    NSLog(@"cancel button pressed!");
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

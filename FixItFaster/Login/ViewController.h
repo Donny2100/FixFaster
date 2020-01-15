@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIView *emailView;
 @property (weak, nonatomic) IBOutlet UIView *pwdView;
 @property (weak, nonatomic) IBOutlet UITextField *emailTf;

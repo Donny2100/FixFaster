@@ -9,8 +9,14 @@
 #import "MainViewController.h"
 #import "ImageViewController.h"
 #import "VideoViewController.h"
+#import "UploadViewController.h"
+#import "ChatListViewController.h"
 
-@interface MainViewController ()
+@interface MainViewController () {
+    int uploadType;
+    UIImage *uploadImage;
+    NSURL *uploadVideoUrl;
+}
 @property (strong, nonatomic) LLSimpleCamera *camera;
 @property (strong, nonatomic) UILabel *errorLabel;
 @property (strong, nonatomic) UIButton *snapButton;
@@ -18,6 +24,8 @@
 @property (strong, nonatomic) UIButton *flashButton;
 @property (strong, nonatomic) UIButton *chatButton;
 @property (strong, nonatomic) UIButton *uploadButton;
+@property (strong, nonatomic) UIImageView *uploadIv;
+
 @end
 
 @implementation MainViewController
@@ -119,16 +127,29 @@
     self.chatButton.tintColor = [UIColor whiteColor];
     [self.chatButton setImage:[UIImage imageNamed:@"chat.png"] forState:UIControlStateNormal];
     self.chatButton.imageEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
-    [self.chatButton addTarget:self action:@selector(switchButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.chatButton addTarget:self action:@selector(chatButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.chatButton];
     
     self.uploadButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    self.uploadButton.frame = CGRectMake(screenRect.size.width - 72.0f, screenRect.size.height - 67.0f, 60.0f, 60.0f);
+    self.uploadButton.frame = CGRectMake(screenRect.size.width - 72.0f, screenRect.size.height - 67.0f - 64, 60.0f, 60.0f);
     self.uploadButton.tintColor = [UIColor whiteColor];
     [self.uploadButton setImage:[UIImage imageNamed:@"upload.png"] forState:UIControlStateNormal];
     self.uploadButton.imageEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
-    [self.uploadButton addTarget:self action:@selector(switchButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.uploadButton addTarget:self action:@selector(uploadButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.uploadButton];
+    
+    self.uploadIv = [[UIImageView alloc] init];
+    self.uploadIv.frame = CGRectMake(screenRect.size.width - 72.0f, screenRect.size.height - 67.0f, 60.0f, 60.0f);
+    [self.uploadIv setContentMode:UIViewContentModeScaleAspectFill];
+    self.uploadIv.clipsToBounds = YES;
+    self.uploadIv.layer.cornerRadius = 10;
+    [self.uploadIv setUserInteractionEnabled:YES];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(previewTapped:)];
+    [self.uploadIv addGestureRecognizer:tapGesture];
+    [self.view addSubview:self.uploadIv];
+    
+    [self.uploadButton setHidden:YES];
+    [self.uploadIv setHidden:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -136,12 +157,20 @@
     [self.camera start];
 }
 
-- (void)segmentedControlValueChanged:(UISegmentedControl *)control {
-    NSLog(@"Segment value changed!");
-}
-
 - (void)switchButtonPressed:(UIButton *)button {
     [self.camera togglePosition];
+}
+
+- (void)chatButtonPressed:(UIButton *)button {
+    UIStoryboard *mainBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ChatListViewController *chatListVC = [mainBoard instantiateViewControllerWithIdentifier:@"ChatListVC"];
+    [self.navigationController pushViewController:chatListVC animated:YES];
+}
+
+- (void)uploadButtonPressed:(UIButton *)button {
+    UIStoryboard *mainBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UploadViewController *uploadVC = [mainBoard instantiateViewControllerWithIdentifier:@"UploadVC"];
+    [self.navigationController pushViewController:uploadVC animated:YES];
 }
 
 - (NSURL *)applicationDocumentsDirectory {
@@ -166,12 +195,12 @@
 }
 
 - (void)snapButtonPressed:(UIButton *)button {
-    __weak typeof(self) weakSelf = self;
-    
     [self.camera capture:^(LLSimpleCamera *camera, UIImage *image, NSDictionary *metadata, NSError *error) {
         if(!error) {
-            ImageViewController *imageVC = [[ImageViewController alloc] initWithImage:image];
-            [weakSelf presentViewController:imageVC animated:NO completion:nil];
+            uploadType = 0;
+            uploadImage = image;
+            [self showPreview];
+            [self.camera start];
         }
         else {
             NSLog(@"An error has occured: %@", error);
@@ -191,7 +220,6 @@
             // start recording
             NSURL *outputURL = [[[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"test1"] URLByAppendingPathExtension:@"mov"];
             [self.camera startRecordingWithOutputUrl:outputURL];
-            
         }
     }
     if (gesture.state == UIGestureRecognizerStateEnded) {
@@ -200,11 +228,43 @@
         
         self.snapButton.layer.borderColor = [UIColor whiteColor].CGColor;
         self.snapButton.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
+        NSLog(@"video capturing ended");
         
         [self.camera stopRecording:^(LLSimpleCamera *camera, NSURL *outputFileUrl, NSError *error) {
-            VideoViewController *vc = [[VideoViewController alloc] initWithVideoUrl:outputFileUrl];
-            [self.navigationController pushViewController:vc animated:YES];
+            if(!error) {
+                uploadType = 1;
+                uploadVideoUrl = outputFileUrl;
+                [self showPreview];
+                [self.camera start];
+            }
         }];
+    }
+}
+
+- (void)previewTapped:(UIGestureRecognizer *)gesture {
+    if(uploadType == 0) {
+        ImageViewController *imageVC = [[ImageViewController alloc] initWithImage:uploadImage];
+                 [self.navigationController pushViewController:imageVC animated:YES];
+    } else {
+        VideoViewController *vc = [[VideoViewController alloc] initWithVideoUrl:uploadVideoUrl];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
+- (void)showPreview {
+    [self.uploadIv setHidden:NO];
+    [self.uploadButton setHidden:NO];
+    
+    if(uploadType == 0) {
+        [self.uploadIv setImage:uploadImage];
+    } else {
+        AVURLAsset* asset = [AVURLAsset URLAssetWithURL:uploadVideoUrl options:nil];
+        AVAssetImageGenerator* imageGenerator = [AVAssetImageGenerator assetImageGeneratorWithAsset:asset];
+        imageGenerator.appliesPreferredTrackTransform = YES;
+        CGImageRef cgImage = [imageGenerator copyCGImageAtTime:CMTimeMake(0, 1) actualTime:nil error:nil];
+        UIImage* image = [UIImage imageWithCGImage:cgImage];
+        
+        [self.uploadIv setImage:image];
     }
 }
 

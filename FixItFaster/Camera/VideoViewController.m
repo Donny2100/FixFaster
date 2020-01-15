@@ -1,4 +1,4 @@
-LFra//
+//
 //  TestVideoViewController.m
 //  Memento
 //
@@ -52,7 +52,7 @@ LFra//
     // cancel button
     [self.view addSubview:self.cancelButton];
     [self.cancelButton addTarget:self action:@selector(cancelButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    self.cancelButton.frame = CGRectMake(0, 0, 44, 44);
+    self.cancelButton.frame = CGRectMake(0, 16, 50, 50);
 }
 
 - (void)viewWillAppear:(BOOL)animated{

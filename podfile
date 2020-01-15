@@ -1,0 +1,24 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'FixItFaster' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  pod 'LLSimpleCamera', '~> 4.1'
+  pod 'FLNiceSpinner'
+  
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+
+  # Pods for FixItFaster
+
+  target 'FixItFasterTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'FixItFasterUITests' do
+    # Pods for testing
+  end
+
+end

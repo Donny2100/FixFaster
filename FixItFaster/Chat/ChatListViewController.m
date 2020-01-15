@@ -7,8 +7,11 @@
 //
 
 #import "ChatListViewController.h"
+#import "ChatListTableViewCell.h"
+#import "ChatViewController.h"
+#import "ChatViewController.h"
 
-@interface ChatListViewController ()
+@interface ChatListViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
@@ -17,6 +20,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setupView];
+}
+
+- (void)setupView {
+    self.chatListTv.tableFooterView = [[UIView alloc] init];
+}
+
+- (IBAction)cancelClicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 72;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 8;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ChatListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatListTVC"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UIStoryboard *mainBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ChatViewController *chatVC = [mainBoard instantiateViewControllerWithIdentifier:@"ChatVC"];
+    [self.navigationController pushViewController:chatVC animated:YES];
 }
 
 /*

@@ -15,11 +15,21 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Take video and pictures for home documents</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>To indicate location of property</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>To indicate location of property</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To indicate location of property</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Take video and pictures for home documents</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

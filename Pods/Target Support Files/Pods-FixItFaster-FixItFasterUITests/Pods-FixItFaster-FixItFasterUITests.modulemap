@@ -1,0 +1,6 @@
+framework module Pods_FixItFaster_FixItFasterUITests {
+  umbrella header "Pods-FixItFaster-FixItFasterUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
