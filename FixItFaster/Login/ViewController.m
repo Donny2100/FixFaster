@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "SignUpViewController.h"
 #import "MainViewController.h"
+
 @import Firebase;
 
 @interface ViewController ()
@@ -115,7 +116,7 @@
                                password:self.pwdTf.text
                              completion:^(FIRAuthDataResult * _Nullable authResult,
                                           NSError * _Nullable error) {
-            if(error.localizedDescription == NULL){
+            if(error.localizedDescription == NULL){  // login success
                 UIStoryboard *mainBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                 MainViewController *mainVC = [mainBoard instantiateViewControllerWithIdentifier:@"MainVC"];
                 [self.navigationController pushViewController:mainVC animated:YES];

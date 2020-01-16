@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ChatListTableViewCell.h"
+@import Firebase;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ChatListViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITableView *chatListTv;
+@property (weak, nonatomic) IBOutlet UISwitch *chatSwitch;
+@property (strong, nonatomic) FIRDatabaseReference *ref; //newly added
+@property (strong, nonatomic) NSMutableArray<FIRDataSnapshot *> *uploadInfo;// newly added
 
 @end
 

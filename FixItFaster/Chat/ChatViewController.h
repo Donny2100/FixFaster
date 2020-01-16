@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIBubbleTableView.h"
-
+@import Firebase;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ChatViewController : UIViewController
@@ -16,7 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet UITextField *msgTf;
 @property (strong, nonatomic) IBOutlet UIButton *sendBt;
 @property (strong, nonatomic) IBOutlet UIView *msgView;
-
+@property (strong, nonatomic) FIRDatabaseReference *ref; //newly added
+@property (strong, nonatomic) NSMutableArray<FIRDataSnapshot *> *uploadInfo;//
+@property (strong, nonatomic) NSString *refKey;
+- (IBAction)sendBtnClicked:(id)sender;
 @end
 
 NS_ASSUME_NONNULL_END

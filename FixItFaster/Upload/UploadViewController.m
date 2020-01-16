@@ -15,6 +15,22 @@
     UITableView *autocompleteTableView;  // added by chao
     NSMutableArray *autocompletePlaces;
     NSMutableArray *places;
+    
+//    /* for uploading*/
+    NSString *userID;
+    NSString *placeID;
+    NSString *placeN;
+    NSString *mCat;
+    NSString *sCat;
+    NSString *mURL;
+    NSString *mType;
+    NSString *timeStamp;
+    NSString *refKey;
+    
+    NSString* path;
+    NSString* jsonString;
+    NSData* jsonData;
+    id allKeys;
 }
 
 @end
@@ -111,12 +127,21 @@
 }
 
 - (void)initValue {
+    path = 	[[NSBundle mainBundle] pathForResource:@"category" ofType:@"json"];
+    jsonString = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *jsonError;
+    allKeys = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONWritingPrettyPrinted error:&jsonError];
+    NSLog(@"all keys: %@", [NSString stringWithFormat:@"%i",[allKeys count]]);
+    
     mainCategories = @[@"STRUCTURAL SYSTEMS", @"ELECTRICAL SYSTEMS", @"HEATING, VENTILATION AND AIR CONDITIONING SYSTEMS", @"PLUMBING SYSTEMS", @"APPLIANCES"];
      subCategories = @[@"Foundations", @"Grading and Drainage", @"Roof Covering Materials", @"Roof Structures and Attics", @"Walls (Interior and Exterior)"];
     
     places = [[NSMutableArray alloc]initWithObjects:@"Cricket",@"Dancing",@"Painting",@"Swiming",@"guitar",@"movie",@"boxing",@"drum",@"hockey",@"chessing",@"gamming",
     @"hunting",@"killing",@"shoping",@"jamm", @"zooming", nil];
     autocompletePlaces = [[NSMutableArray alloc] init];
+    
+    self.ref = [[FIRDatabase database] reference];
 }
 
 - (void)setupView {
@@ -159,6 +184,42 @@
 }
 
 - (IBAction)uploadClicked:(id)sender {
+    FIRUser *user = [FIRAuth auth].currentUser;
+    if (user) {
+        userID = user.uid;
+        NSLog(@"%@", userID);
+        placeID = @"0222";
+        placeN = self.searchTf.text;
+        mCat = self.mainCategoryLb.text;
+        sCat = self.subCategoryLb.text;
+        
+        /* store image or video on cloudinary
+         mURL =
+         mType =
+         */
+        mURL = @"https:\\google.com";
+        mType = @"0";
+        
+        NSDate * now = [NSDate date];
+        NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+        [outputFormatter setDateFormat:@"MM/dd/yyyy"];
+        timeStamp = [outputFormatter stringFromDate:now];
+//        NSLog(@"newDateString %@", newDateString);
+        
+        
+        /* uploaing  to firebase database now */
+        FIRDatabaseReference *uploadref = [[[self.ref child:@"upload"] child:userID] childByAutoId];
+        refKey = [uploadref key];
+        
+        [[uploadref child:@"placeID"] setValue:placeID];
+        [[uploadref child:@"placeN"] setValue:placeN];
+        [[uploadref child:@"mCat"] setValue:mCat];
+        [[uploadref child:@"sCat"] setValue:sCat];
+        [[uploadref child:@"mURL"] setValue:mURL];
+        [[uploadref child:@"mType"] setValue:mType];
+        [[uploadref child:@"timeStamp"] setValue:timeStamp];
+        [[uploadref child:@"refKey"] setValue:refKey];
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

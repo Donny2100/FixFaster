@@ -10,7 +10,7 @@
 #import "FLNiceSpinner.h"
 #import <MapKit/MapKit.h>
 #import "MKDropdownMenu.h"
-
+@import Firebase;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UploadViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet UILabel *mainCategoryLb;
 @property (strong, nonatomic) IBOutlet UILabel *subCategoryLb;
 @property (strong, nonatomic) IBOutlet UIButton *cancelBt;
+@property (strong, nonatomic) FIRDatabaseReference *ref;
 
 @end
 

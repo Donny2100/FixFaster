@@ -11,6 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ChatListTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *msg;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UILabel *timeStamp;
+@property (weak, nonatomic) IBOutlet UILabel *placeN;
 
 @end
 

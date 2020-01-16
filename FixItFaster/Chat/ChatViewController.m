@@ -8,20 +8,81 @@
 
 #import "ChatViewController.h"
 #import "IQKeyboardManager.h"
+#import "NSBubbleData.h" // addedy by me
 
 @interface ChatViewController () <UIBubbleTableViewDataSource>
 {
-    NSMutableArray *chatArr;
+    NSDictionary<NSString*, NSString*> *chatDic;  // snapshot array from firebase
+    NSMutableArray *chatArray;
+    NSMutableArray *bubbleData; // for bubble table view
+    /* addedy by me*/
+    FIRUser *user;
+    FIRDatabaseHandle _refHandle;
+    int index;
+    
 }
+
 @end
 
 @implementation ChatViewController
 
+- (void)configureDatabase{
+    index = 0;
+    chatArray = [[NSMutableArray alloc] init];
+    _ref = [[FIRDatabase database] reference];
+    user = [FIRAuth auth].currentUser;
+    NSLog(@"inside configure database");
+    /* for displaying upload image or view */
+    [[[[_ref child:@"upload"] child:user.uid] child: _refKey] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+      NSLog(@"reading onetime snapshot working");
+      chatDic = snapshot.value;
+      NSString *mUrl = chatDic[@"mURL"];
+      NSLog(@"Image Url is %@", mUrl);
+      NSBubbleData *imageOrVideo = [NSBubbleData dataWithText: mUrl date:[NSDate dateWithTimeIntervalSinceNow:-300] type:BubbleTypeMine];
+        imageOrVideo.avatar = nil;
+      
+      _chatTv.showAvatars = NO;
+      bubbleData = [[NSMutableArray alloc]initWithObjects:imageOrVideo, nil];
+      
+      [_chatTv reloadData];
+      // ...
+    } withCancelBlock:^(NSError * _Nonnull error) {
+      NSLog(@"reading onetime snapshot%@", error.localizedDescription);
+    }];
+    /* end displaying upload image or video */
+    
+    _refHandle = [[[[[self.ref child:@"upload"] child:user.uid] child:_refKey] child:@"chat"] observeEventType:FIRDataEventTypeChildAdded withBlock:^(FIRDataSnapshot *snapshot) {
+//      [chatArray addObject:snapshot];
+        
+        NSDictionary<NSString*, NSString*> *per = snapshot.value;
+        NSString *chatter = per[@"name"];
+        NSString *msg = per[@"msg"];
+        NSBubbleData *message;
+        if([chatter isEqualToString:@"me"]){
+            message = [NSBubbleData dataWithText: msg date:[NSDate dateWithTimeIntervalSinceNow:-300] type:BubbleTypeMine];
+            
+        }else{
+            message = [NSBubbleData dataWithText: msg date:[NSDate dateWithTimeIntervalSinceNow:-300] type:BubbleTypeSomeoneElse];
+        }
+        index += 1;
+        message.avatar = nil;
+        [bubbleData addObject:message];
+        [_chatTv reloadData];
+//      [_chatTv insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:chatArray.count inSection:0]] withRowAnimation: UITableViewRowAnimationAutomatic];
+    }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self initValue];
+  //  [self initValue]; commented in by me
+    [self configureDatabase];
+    
+    
+    /* end adding*/
+    
     [self setupView];
+  //    // added by me
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -33,22 +94,24 @@
 }
 
 - (void)initValue {
-    chatArr = [[NSMutableArray alloc] init];
-    
-    NSString *msg = self.msgTf.text;
-    NSDate *curDate = [NSDate date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
-    
-    NSString *curDateStr = [dateFormatter stringFromDate:curDate];
-    
-    for(int i = 0; i < 10; i++) {
-        NSMutableDictionary *msgDict = [[NSMutableDictionary alloc] init];
-        [msgDict setObject:@"This is test message" forKey:@"Message"];
-        [msgDict setObject:curDateStr forKey:@"AddDate"];
-        [chatArr addObject:msgDict];
-    }
+// cometted by me
+//    chatArr = [[NSMutableArray alloc] init];
+//
+//    NSString *msg = self.msgTf.text;
+//    NSDate *curDate = [NSDate date];
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+//    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+//
+//    NSString *curDateStr = [dateFormatter stringFromDate:curDate];
+//
+//    for(int i = 0; i < 10; i++) {
+//        NSMutableDictionary *msgDict = [[NSMutableDictionary alloc] init];
+//        [msgDict setObject:@"This is test message" forKey:@"Message"];
+//        [msgDict setObject:curDateStr forKey:@"AddDate"];
+//        [chatArr addObject:msgDict];
+//    }
+// commentted in by me
     
     [self.chatTv reloadData];
     [self.chatTv scrollBubbleViewToBottomAnimated:YES];
@@ -71,23 +134,11 @@
 }
 
 - (NSInteger)rowsForBubbleTable:(UIBubbleTableView *)tableView {
-    return chatArr.count;
+    return bubbleData.count;
 }
 
 - (NSBubbleData *)bubbleTableView:(UIBubbleTableView *)tableView dataForRow:(NSInteger)row {
-    NSDictionary *dict = [chatArr objectAtIndex:row];
-    NSString *contentStr = [dict objectForKey:@"Message"];
-    NSString *dateStr = [dict objectForKey:@"AddDate"];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSDate *chatDate = [dateFormatter dateFromString:dateStr];
-    
-    NSBubbleData *sayBubble;
-    sayBubble = [NSBubbleData dataWithText:contentStr date:chatDate type:BubbleTypeMine];
- 
-    [sayBubble.view setTag:row];
-    return sayBubble;
+    return [bubbleData objectAtIndex:row];
 }
 /*
 #pragma mark - Navigation
@@ -99,4 +150,15 @@
 }
 */
 
+- (IBAction)sendBtnClicked:(id)sender {
+    NSLog(@"Message send button was clicked");
+    FIRDatabaseReference *chatref = [[[[[_ref child:@"upload"] child:user.uid] child:_refKey] child:@"chat"] child:[[NSNumber numberWithInt:index] stringValue]];
+//    _refKey = [chatref key];
+//    [[chatref child:@"name"] setValue:@"me"];
+//    [[chatref child:@"msg"] setValue:self.msgTf.text];
+    NSDictionary *newm = @{@"name":@"me", @"msg":self.msgTf.text};
+    [chatref setValue:newm];
+    NSLog(@"end send button clicked");
+    self.msgTf.text = @"";
+}
 @end

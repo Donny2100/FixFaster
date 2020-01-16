@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3061AE029A19EDAE47B000C76C6AEAE9"
+               BlueprintIdentifier = "24448442BE421159978FD9FFE501E5BD"
                BuildableName = "Pods_FixItFaster_FixItFasterUITests.framework"
                BlueprintName = "Pods-FixItFaster-FixItFasterUITests"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1EAC3C6F2A8AF2FD72B9AD1E /* Pods_FixItFaster_FixItFasterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECEA807AB99205114D00D3C /* Pods_FixItFaster_FixItFasterUITests.framework */; };
+		A52D58030A84C96142AA2A15 /* Pods_FixItFaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBEBEE82C5038A58A650BAD /* Pods_FixItFaster.framework */; };
+		C6A62FA1D95709AD86E39B27 /* Pods_FixItFaster_FixItFasterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CB5C1111E2FDF0714E5597 /* Pods_FixItFaster_FixItFasterUITests.framework */; };
+		CC481D4B36F4D63003833A0C /* Pods_FixItFasterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63AB63D3CE435326629AD5DC /* Pods_FixItFasterTests.framework */; };
 		D00A3FD923A3C00100AC3C55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D00A3FD823A3C00100AC3C55 /* AppDelegate.m */; };
 		D00A3FE423A3C00700AC3C55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D00A3FE323A3C00700AC3C55 /* Assets.xcassets */; };
 		D00A3FE723A3C00700AC3C55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00A3FE523A3C00700AC3C55 /* LaunchScreen.storyboard */; };
@@ -21,10 +23,12 @@
 		D00A402523A3C11D00AC3C55 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = D00A401F23A3C11C00AC3C55 /* UIImage+Resize.m */; };
 		D00A402623A3C11D00AC3C55 /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = D00A402123A3C11C00AC3C55 /* UIImage+Crop.m */; };
 		D00A402723A3C11D00AC3C55 /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D00A402223A3C11C00AC3C55 /* ViewUtils.m */; };
-		D00A408A23A3C26C00AC3C55 /* libCloudinary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D00A408723A3C26C00AC3C55 /* libCloudinary.a */; };
 		D00A408C23A3C3AD00AC3C55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00A408B23A3C3AC00AC3C55 /* Main.storyboard */; };
 		D03AB84E23AC15DC0008BBC6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D03AB84D23AC15DC0008BBC6 /* GoogleService-Info.plist */; };
-		D0C555B723B600C8009CFF0F /* FixItFaster.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = D0C555B623B600C8009CFF0F /* FixItFaster.xcworkspace */; };
+		D03AB85023ADBF030008BBC6 /* Util in Resources */ = {isa = PBXBuildFile; fileRef = D03AB84F23ADBF020008BBC6 /* Util */; };
+		D03AB85E23AF46BD0008BBC6 /* uploadTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03AB85D23AF46BD0008BBC6 /* uploadTableCell.xib */; };
+		D03AB86123AF49E20008BBC6 /* UploadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D03AB86023AF49E20008BBC6 /* UploadTableViewCell.m */; };
+		D08186D223CCFDD2003D8770 /* category.json in Resources */ = {isa = PBXBuildFile; fileRef = D08186D123CCFDD2003D8770 /* category.json */; };
 		D0E56F7523A3FEF800016F3B /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E56F7423A3FEF800016F3B /* ImageViewController.m */; };
 		D0E56F7923A407DD00016F3B /* UploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E56F7823A407DD00016F3B /* UploadViewController.m */; };
 		D0E56F7C23A412C100016F3B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E56F7A23A412C100016F3B /* SceneDelegate.m */; };
@@ -52,8 +56,6 @@
 		D0E5704523A5D1AF00016F3B /* UIBubbleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E5703E23A5D1AF00016F3B /* UIBubbleTableView.m */; };
 		D0E5704623A5D1AF00016F3B /* UIBubbleHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E5704123A5D1AF00016F3B /* UIBubbleHeaderTableViewCell.m */; };
 		D0E5704923A5D1E400016F3B /* ChatListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E5704823A5D1E400016F3B /* ChatListTableViewCell.m */; };
-		DDEEE263DBBA261BACDBA850 /* Pods_FixItFaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C37E930A8C7AC61CAF02381 /* Pods_FixItFaster.framework */; };
-		ECEC2E998AE6BCFEFB3CAA35 /* Pods_FixItFasterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B0F29041685440E9C59612 /* Pods_FixItFasterTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,15 +76,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		10371AAB7A0DF6BC3795C4CD /* Pods-FixItFaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixItFaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FixItFaster/Pods-FixItFaster.debug.xcconfig"; sourceTree = "<group>"; };
-		2ECEA807AB99205114D00D3C /* Pods_FixItFaster_FixItFasterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FixItFaster_FixItFasterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BCF530B2E7B2D36208866EE /* Pods-FixItFaster-FixItFasterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixItFaster-FixItFasterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FixItFaster-FixItFasterUITests/Pods-FixItFaster-FixItFasterUITests.release.xcconfig"; sourceTree = "<group>"; };
-		3C4B64D1F5DF87EDB50856AE /* Pods-FixItFaster-FixItFasterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixItFaster-FixItFasterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FixItFaster-FixItFasterUITests/Pods-FixItFaster-FixItFasterUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		66B0F29041685440E9C59612 /* Pods_FixItFasterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FixItFasterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		79203699844125CA0A8676E8 /* Pods-FixItFasterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixItFasterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FixItFasterTests/Pods-FixItFasterTests.debug.xcconfig"; sourceTree = "<group>"; };
-		7C37E930A8C7AC61CAF02381 /* Pods_FixItFaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FixItFaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BD2DC11352CFD30055433AD /* Pods-FixItFasterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixItFasterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FixItFasterTests/Pods-FixItFasterTests.release.xcconfig"; sourceTree = "<group>"; };
-		A07864F16F089CDC2678C2C6 /* Pods-FixItFaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixItFaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-FixItFaster/Pods-FixItFaster.release.xcconfig"; sourceTree = "<group>"; };
+		239E228B9578339111E4E7D6 /* Pods-FixItFasterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixItFasterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FixItFasterTests/Pods-FixItFasterTests.release.xcconfig"; sourceTree = "<group>"; };
+		561CE939AA5560D5CBF58B40 /* Pods-FixItFaster-FixItFasterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixItFaster-FixItFasterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FixItFaster-FixItFasterUITests/Pods-FixItFaster-FixItFasterUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		63AB63D3CE435326629AD5DC /* Pods_FixItFasterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FixItFasterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8809680DF6F7C905186BDE11 /* Pods-FixItFaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixItFaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FixItFaster/Pods-FixItFaster.debug.xcconfig"; sourceTree = "<group>"; };
+		AD7A88B3B9697C8B04E38A30 /* Pods-FixItFaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixItFaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-FixItFaster/Pods-FixItFaster.release.xcconfig"; sourceTree = "<group>"; };
+		BFBEBEE82C5038A58A650BAD /* Pods_FixItFaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FixItFaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00A3FD423A3C00100AC3C55 /* FixItFaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FixItFaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00A3FD723A3C00100AC3C55 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D00A3FD823A3C00100AC3C55 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -110,16 +109,13 @@
 		D00A402223A3C11C00AC3C55 /* ViewUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtils.m; sourceTree = "<group>"; };
 		D00A402323A3C11D00AC3C55 /* UIImage+Crop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Crop.h"; sourceTree = "<group>"; };
 		D00A402423A3C11D00AC3C55 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
-		D00A408323A3C26C00AC3C55 /* CLTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTransformation.h; sourceTree = "<group>"; };
-		D00A408423A3C26C00AC3C55 /* CLCloudinary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCloudinary.h; sourceTree = "<group>"; };
-		D00A408523A3C26C00AC3C55 /* CLEagerTransformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLEagerTransformation.h; sourceTree = "<group>"; };
-		D00A408623A3C26C00AC3C55 /* CLLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLayer.h; sourceTree = "<group>"; };
-		D00A408723A3C26C00AC3C55 /* libCloudinary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCloudinary.a; sourceTree = "<group>"; };
-		D00A408823A3C26C00AC3C55 /* CLUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUploader.h; sourceTree = "<group>"; };
-		D00A408923A3C26C00AC3C55 /* Cloudinary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cloudinary.h; sourceTree = "<group>"; };
 		D00A408B23A3C3AC00AC3C55 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D03AB84D23AC15DC0008BBC6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D0C555B623B600C8009CFF0F /* FixItFaster.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = FixItFaster.xcworkspace; sourceTree = "<group>"; };
+		D03AB84F23ADBF020008BBC6 /* Util */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Util; sourceTree = "<group>"; };
+		D03AB85D23AF46BD0008BBC6 /* uploadTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = uploadTableCell.xib; sourceTree = "<group>"; };
+		D03AB85F23AF49E20008BBC6 /* UploadTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadTableViewCell.h; sourceTree = "<group>"; };
+		D03AB86023AF49E20008BBC6 /* UploadTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadTableViewCell.m; sourceTree = "<group>"; };
+		D08186D123CCFDD2003D8770 /* category.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = category.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		D0E56F7323A3FEF800016F3B /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		D0E56F7423A3FEF800016F3B /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		D0E56F7723A407DD00016F3B /* UploadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadViewController.h; sourceTree = "<group>"; };
@@ -175,6 +171,9 @@
 		D0E5704123A5D1AF00016F3B /* UIBubbleHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBubbleHeaderTableViewCell.m; sourceTree = "<group>"; };
 		D0E5704723A5D1E300016F3B /* ChatListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatListTableViewCell.h; sourceTree = "<group>"; };
 		D0E5704823A5D1E400016F3B /* ChatListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatListTableViewCell.m; sourceTree = "<group>"; };
+		D4CB5C1111E2FDF0714E5597 /* Pods_FixItFaster_FixItFasterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FixItFaster_FixItFasterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8AF6DAA6FEE3EE0F620B789 /* Pods-FixItFasterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixItFasterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FixItFasterTests/Pods-FixItFasterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FD7927C2441E5697EDA74391 /* Pods-FixItFaster-FixItFasterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixItFaster-FixItFasterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FixItFaster-FixItFasterUITests/Pods-FixItFaster-FixItFasterUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,8 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0E56FDC23A5C64E00016F3B /* MapKit.framework in Frameworks */,
-				D00A408A23A3C26C00AC3C55 /* libCloudinary.a in Frameworks */,
-				DDEEE263DBBA261BACDBA850 /* Pods_FixItFaster.framework in Frameworks */,
+				A52D58030A84C96142AA2A15 /* Pods_FixItFaster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECEC2E998AE6BCFEFB3CAA35 /* Pods_FixItFasterTests.framework in Frameworks */,
+				CC481D4B36F4D63003833A0C /* Pods_FixItFasterTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,22 +198,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EAC3C6F2A8AF2FD72B9AD1E /* Pods_FixItFaster_FixItFasterUITests.framework in Frameworks */,
+				C6A62FA1D95709AD86E39B27 /* Pods_FixItFaster_FixItFasterUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		161E94419207563C1A4514B9 /* Pods */ = {
+		7ED64C727C89634173096C4A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				10371AAB7A0DF6BC3795C4CD /* Pods-FixItFaster.debug.xcconfig */,
-				A07864F16F089CDC2678C2C6 /* Pods-FixItFaster.release.xcconfig */,
-				3C4B64D1F5DF87EDB50856AE /* Pods-FixItFaster-FixItFasterUITests.debug.xcconfig */,
-				3BCF530B2E7B2D36208866EE /* Pods-FixItFaster-FixItFasterUITests.release.xcconfig */,
-				79203699844125CA0A8676E8 /* Pods-FixItFasterTests.debug.xcconfig */,
-				8BD2DC11352CFD30055433AD /* Pods-FixItFasterTests.release.xcconfig */,
+				8809680DF6F7C905186BDE11 /* Pods-FixItFaster.debug.xcconfig */,
+				AD7A88B3B9697C8B04E38A30 /* Pods-FixItFaster.release.xcconfig */,
+				561CE939AA5560D5CBF58B40 /* Pods-FixItFaster-FixItFasterUITests.debug.xcconfig */,
+				FD7927C2441E5697EDA74391 /* Pods-FixItFaster-FixItFasterUITests.release.xcconfig */,
+				F8AF6DAA6FEE3EE0F620B789 /* Pods-FixItFasterTests.debug.xcconfig */,
+				239E228B9578339111E4E7D6 /* Pods-FixItFasterTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -224,9 +222,9 @@
 			isa = PBXGroup;
 			children = (
 				D0E56FDB23A5C64E00016F3B /* MapKit.framework */,
-				7C37E930A8C7AC61CAF02381 /* Pods_FixItFaster.framework */,
-				2ECEA807AB99205114D00D3C /* Pods_FixItFaster_FixItFasterUITests.framework */,
-				66B0F29041685440E9C59612 /* Pods_FixItFasterTests.framework */,
+				BFBEBEE82C5038A58A650BAD /* Pods_FixItFaster.framework */,
+				D4CB5C1111E2FDF0714E5597 /* Pods_FixItFaster_FixItFasterUITests.framework */,
+				63AB63D3CE435326629AD5DC /* Pods_FixItFasterTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -234,13 +232,12 @@
 		D00A3FCB23A3C00100AC3C55 = {
 			isa = PBXGroup;
 			children = (
-				D0C555B623B600C8009CFF0F /* FixItFaster.xcworkspace */,
 				D00A3FD623A3C00100AC3C55 /* FixItFaster */,
 				D00A3FF223A3C00800AC3C55 /* FixItFasterTests */,
 				D00A3FFD23A3C00800AC3C55 /* FixItFasterUITests */,
 				D00A3FD523A3C00100AC3C55 /* Products */,
-				161E94419207563C1A4514B9 /* Pods */,
 				C3E404FE19BEF6EB66A72A86 /* Frameworks */,
+				7ED64C727C89634173096C4A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -257,6 +254,7 @@
 		D00A3FD623A3C00100AC3C55 /* FixItFaster */ = {
 			isa = PBXGroup;
 			children = (
+				D03AB84F23ADBF020008BBC6 /* Util */,
 				D0E5700E23A5CF1700016F3B /* Chat */,
 				D0E56F7623A407D000016F3B /* Upload */,
 				D00A400F23A3C0AC00AC3C55 /* Camera */,
@@ -273,6 +271,7 @@
 				D00A3FE823A3C00700AC3C55 /* Info.plist */,
 				D03AB84D23AC15DC0008BBC6 /* GoogleService-Info.plist */,
 				D00A3FE923A3C00700AC3C55 /* main.m */,
+				D08186D123CCFDD2003D8770 /* category.json */,
 			);
 			path = FixItFaster;
 			sourceTree = "<group>";
@@ -325,7 +324,6 @@
 				D0E5703623A5D1AF00016F3B /* BubbleTableView */,
 				D0E56FDD23A5C9BC00016F3B /* IQKeyboardManager */,
 				D0E56F7D23A47A0500016F3B /* MKDropdownMenu */,
-				D00A408223A3C26C00AC3C55 /* Cloudinary */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -341,20 +339,6 @@
 				D0E56F7423A3FEF800016F3B /* ImageViewController.m */,
 			);
 			path = Camera;
-			sourceTree = "<group>";
-		};
-		D00A408223A3C26C00AC3C55 /* Cloudinary */ = {
-			isa = PBXGroup;
-			children = (
-				D00A408323A3C26C00AC3C55 /* CLTransformation.h */,
-				D00A408423A3C26C00AC3C55 /* CLCloudinary.h */,
-				D00A408523A3C26C00AC3C55 /* CLEagerTransformation.h */,
-				D00A408623A3C26C00AC3C55 /* CLLayer.h */,
-				D00A408723A3C26C00AC3C55 /* libCloudinary.a */,
-				D00A408823A3C26C00AC3C55 /* CLUploader.h */,
-				D00A408923A3C26C00AC3C55 /* Cloudinary.h */,
-			);
-			path = Cloudinary;
 			sourceTree = "<group>";
 		};
 		D0E56F7623A407D000016F3B /* Upload */ = {
@@ -460,6 +444,9 @@
 				D0E5701323A5CF2B00016F3B /* ChatViewController.m */,
 				D0E5704723A5D1E300016F3B /* ChatListTableViewCell.h */,
 				D0E5704823A5D1E400016F3B /* ChatListTableViewCell.m */,
+				D03AB85F23AF49E20008BBC6 /* UploadTableViewCell.h */,
+				D03AB86023AF49E20008BBC6 /* UploadTableViewCell.m */,
+				D03AB85D23AF46BD0008BBC6 /* uploadTableCell.xib */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -489,11 +476,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D00A400323A3C00800AC3C55 /* Build configuration list for PBXNativeTarget "FixItFaster" */;
 			buildPhases = (
-				F8E58EE41D18C6FC4C6AC8B5 /* [CP] Check Pods Manifest.lock */,
+				1383C565143EC3B07DFC258B /* [CP] Check Pods Manifest.lock */,
 				D00A3FD023A3C00100AC3C55 /* Sources */,
 				D00A3FD123A3C00100AC3C55 /* Frameworks */,
 				D00A3FD223A3C00100AC3C55 /* Resources */,
-				C5E24EC5BEBCA1E7DBC7A91D /* [CP] Embed Pods Frameworks */,
+				6F91683BE14557924557156F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -508,7 +495,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D00A400623A3C00800AC3C55 /* Build configuration list for PBXNativeTarget "FixItFasterTests" */;
 			buildPhases = (
-				3CB78B031A5BFA0C50FA76FD /* [CP] Check Pods Manifest.lock */,
+				DF78D525682738A02B04B95A /* [CP] Check Pods Manifest.lock */,
 				D00A3FEB23A3C00800AC3C55 /* Sources */,
 				D00A3FEC23A3C00800AC3C55 /* Frameworks */,
 				D00A3FED23A3C00800AC3C55 /* Resources */,
@@ -527,11 +514,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D00A400923A3C00800AC3C55 /* Build configuration list for PBXNativeTarget "FixItFasterUITests" */;
 			buildPhases = (
-				592B40A0C098003853065DE8 /* [CP] Check Pods Manifest.lock */,
+				DD8E52EEB86358A1C76CD25D /* [CP] Check Pods Manifest.lock */,
 				D00A3FF623A3C00800AC3C55 /* Sources */,
 				D00A3FF723A3C00800AC3C55 /* Frameworks */,
 				D00A3FF823A3C00800AC3C55 /* Resources */,
-				A5236F6B13645AC4F799941A /* [CP] Embed Pods Frameworks */,
+				42CC9F9EA0291F9352AD115A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -590,11 +577,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03AB85E23AF46BD0008BBC6 /* uploadTableCell.xib in Resources */,
 				D0E5700623A5C9BC00016F3B /* IQKeyboardManager.xcassets in Resources */,
 				D00A408C23A3C3AD00AC3C55 /* Main.storyboard in Resources */,
+				D08186D223CCFDD2003D8770 /* category.json in Resources */,
+				D03AB85023ADBF030008BBC6 /* Util in Resources */,
 				D03AB84E23AC15DC0008BBC6 /* GoogleService-Info.plist in Resources */,
 				D00A3FE723A3C00700AC3C55 /* LaunchScreen.storyboard in Resources */,
-				D0C555B723B600C8009CFF0F /* FixItFaster.xcworkspace in Resources */,
 				D00A3FE423A3C00700AC3C55 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,7 +605,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3CB78B031A5BFA0C50FA76FD /* [CP] Check Pods Manifest.lock */ = {
+		1383C565143EC3B07DFC258B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -631,14 +620,78 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FixItFasterTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FixItFaster-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		592B40A0C098003853065DE8 /* [CP] Check Pods Manifest.lock */ = {
+		42CC9F9EA0291F9352AD115A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FixItFaster-FixItFasterUITests/Pods-FixItFaster-FixItFasterUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FLNiceSpinner/FLNiceSpinner.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/LLSimpleCamera/LLSimpleCamera.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLNiceSpinner.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLSimpleCamera.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FixItFaster-FixItFasterUITests/Pods-FixItFaster-FixItFasterUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F91683BE14557924557156F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FixItFaster/Pods-FixItFaster-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FLNiceSpinner/FLNiceSpinner.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/LLSimpleCamera/LLSimpleCamera.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLNiceSpinner.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLSimpleCamera.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FixItFaster/Pods-FixItFaster-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD8E52EEB86358A1C76CD25D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -660,67 +713,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A5236F6B13645AC4F799941A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FixItFaster-FixItFasterUITests/Pods-FixItFaster-FixItFasterUITests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FLNiceSpinner/FLNiceSpinner.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/LLSimpleCamera/LLSimpleCamera.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLNiceSpinner.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLSimpleCamera.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FixItFaster-FixItFasterUITests/Pods-FixItFaster-FixItFasterUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C5E24EC5BEBCA1E7DBC7A91D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FixItFaster/Pods-FixItFaster-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FLNiceSpinner/FLNiceSpinner.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/LLSimpleCamera/LLSimpleCamera.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLNiceSpinner.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLSimpleCamera.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FixItFaster/Pods-FixItFaster-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F8E58EE41D18C6FC4C6AC8B5 /* [CP] Check Pods Manifest.lock */ = {
+		DF78D525682738A02B04B95A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -735,7 +728,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FixItFaster-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FixItFasterTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -760,6 +753,7 @@
 				D0E5700823A5C9BC00016F3B /* IQNSArray+Sort.m in Sources */,
 				D0E5700D23A5C9BC00016F3B /* IQKeyboardReturnKeyHandler.m in Sources */,
 				D00A3FD923A3C00100AC3C55 /* AppDelegate.m in Sources */,
+				D03AB86123AF49E20008BBC6 /* UploadTableViewCell.m in Sources */,
 				D00A401723A3C0F300AC3C55 /* VideoViewController.m in Sources */,
 				D00A3FEA23A3C00700AC3C55 /* main.m in Sources */,
 				D0E56F7523A3FEF800016F3B /* ImageViewController.m in Sources */,
@@ -941,7 +935,7 @@
 		};
 		D00A400423A3C00800AC3C55 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10371AAB7A0DF6BC3795C4CD /* Pods-FixItFaster.debug.xcconfig */;
+			baseConfigurationReference = 8809680DF6F7C905186BDE11 /* Pods-FixItFaster.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -965,7 +959,7 @@
 		};
 		D00A400523A3C00800AC3C55 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A07864F16F089CDC2678C2C6 /* Pods-FixItFaster.release.xcconfig */;
+			baseConfigurationReference = AD7A88B3B9697C8B04E38A30 /* Pods-FixItFaster.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -989,7 +983,7 @@
 		};
 		D00A400723A3C00800AC3C55 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79203699844125CA0A8676E8 /* Pods-FixItFasterTests.debug.xcconfig */;
+			baseConfigurationReference = F8AF6DAA6FEE3EE0F620B789 /* Pods-FixItFasterTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1009,7 +1003,7 @@
 		};
 		D00A400823A3C00800AC3C55 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8BD2DC11352CFD30055433AD /* Pods-FixItFasterTests.release.xcconfig */;
+			baseConfigurationReference = 239E228B9578339111E4E7D6 /* Pods-FixItFasterTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1029,7 +1023,7 @@
 		};
 		D00A400A23A3C00800AC3C55 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C4B64D1F5DF87EDB50856AE /* Pods-FixItFaster-FixItFasterUITests.debug.xcconfig */;
+			baseConfigurationReference = 561CE939AA5560D5CBF58B40 /* Pods-FixItFaster-FixItFasterUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FixItFasterUITests/Info.plist;
@@ -1047,7 +1041,7 @@
 		};
 		D00A400B23A3C00800AC3C55 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3BCF530B2E7B2D36208866EE /* Pods-FixItFaster-FixItFasterUITests.release.xcconfig */;
+			baseConfigurationReference = FD7927C2441E5697EDA74391 /* Pods-FixItFaster-FixItFasterUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FixItFasterUITests/Info.plist;

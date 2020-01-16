@@ -1,0 +1,178 @@
+[
+  {
+    "key": "structural_systems",
+    "name": "I. Structural Systems",
+    "sub_cat": [
+      {
+        "key": "foundation",
+        "name": "A. Foundation"
+      },
+      {
+        "key": "grading_drainage",
+        "name": "B. Grading and Drainage"
+      },
+      {
+        "key": "roof_material",
+        "name": "C. Roof Covering Materials"
+      },
+      {
+        "key": "roof_structure",
+        "name": "D. Roof Structures and Attics"
+      },
+      {
+        "key": "walls",
+        "name": "E. Walls (Interior and Exterior)"
+      },
+      {
+        "key": "ceiling_floor",
+        "name": "F. Ceilings and Floors"
+      },
+      {
+        "key": "doors",
+        "name": "G. Doors (Interior and Exterior)"
+      },
+      {
+        "key": "windows",
+        "name": "H. Windows"
+      },
+      {
+        "key": "stairways",
+        "name": "I. Stairways (Interior and Exterior)"
+      },
+      {
+        "key": "fireplace_chimney",
+        "name": "J. Fireplaces and Chimneys"
+      },
+      {
+        "key": "porch_balcony_decks_carports",
+        "name": "K. Porches,Balconies,Decks,and Carports"
+      }
+    ]
+  },
+  {
+    "key": "electrical_systems",
+    "name": "II. Electrical Systems",
+    "sub_cat": [
+      {
+        "key": "serv_entrance_panel",
+        "name": "A. Service Entrance and Panels"
+      },
+      {
+        "key": "branch_circuits_devices_fixtures",
+        "name": "B. Branch Circuits,Connected Devices,and Fixtures"
+      }
+    ]
+  },
+  {
+    "key": "hvac",
+    "name": "III. Heating, Ventilation And Air Conditioning Systems",
+    "sub_cat": [
+      {
+        "key": "heating_equipment",
+        "name": "A. Heating Equipment"
+      },
+      {
+        "key": "cooling_equipment",
+        "name": "B. Cooling Equipment"
+      },
+      {
+        "key": "duct_chases_vents",
+        "name": "C. Duct Systems,Chases,and Vents"
+      }
+    ]
+  },
+  {
+    "key": "plumbing",
+    "name": "IV. Plumbing Systems",
+    "sub_cat": [
+      {
+        "key": "supply_distribution_fixtures",
+        "name": "A. Plumbing Supply,Distribution Systems,and Fixtures"
+      },
+      {
+        "key": "drain_waste_vents",
+        "name": "B. Drains,Wastes,and Vents"
+      },
+      {
+        "key": "water_heating",
+        "name": "C. Water Heating Equipment"
+      },
+      {
+        "key": "hydro_massage",
+        "name": "D. Hydro-Massage Therapy Equipment"
+      }
+    ]
+  },
+  {
+    "key": "appliances",
+    "name": "V. Appliances",
+    "sub_cat": [
+      {
+        "key": "dishwasher",
+        "name": "A. Dishwashers"
+      },
+      {
+        "key": "food_waste_disposal",
+        "name": "B. Food Waste Disposers"
+      },
+      {
+        "key": "range_hood_exhaust",
+        "name": "C. Range Hood and Exhaust System"
+      },
+      {
+        "key": "range_cooktops_ovens",
+        "name": "D. Ranges,Cooktops,and Ovens"
+      },
+      {
+        "key": "microwave",
+        "name": "E. Microwave Ovens"
+      },
+      {
+        "key": "mechanical_exhaust_vent_bath_heater",
+        "name": "F. Mechanical Exhaust Vents and Bathroom Heaters"
+      },
+      {
+        "key": "garage_door",
+        "name": "G. Garage Door Operators"
+      },
+      {
+        "key": "dryer_exhaust",
+        "name": "H. Dryer Exhaust Systems"
+      },
+      {
+        "key": "appliance_other",
+        "name": "I. Other"
+      }
+    ]
+  },
+  {
+    "key": "option_systems",
+    "name": "VI. Optional Systems",
+    "sub_cat": [
+      {
+        "key": "landscape_sprinklers",
+        "name": "A. Landscape Irrigation (Sprinkler) Systems"
+      },
+      {
+        "key": "pool_spa",
+        "name": "B. Swimming Pools,Spas,Hot Tubs,and Equipment"
+      },
+      {
+        "key": "outbuildings",
+        "name": "C. Outbuildings"
+      },
+      {
+        "key": "private_well",
+        "name": "D. Private Water Wells (A coliform analysis is recommended.)"
+      },
+      {
+        "key": "septic",
+        "name": "E. Private Sewage Disposal (Septic) Systems"
+      },
+      {
+        "key": "option_other",
+        "name": "F. Other"
+      }
+    ]
+  }
+]

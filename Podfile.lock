@@ -7,6 +7,9 @@ PODS:
     - FirebaseAnalytics (= 5.4.0)
   - Firebase/CoreOnly (5.14.0):
     - FirebaseCore (= 5.1.9)
+  - Firebase/Database (5.14.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (= 5.0.4)
   - FirebaseAnalytics (5.4.0):
     - FirebaseCore (~> 5.1)
     - FirebaseInstanceID (~> 3.3)
@@ -24,6 +27,10 @@ PODS:
   - FirebaseAuthInterop (1.0.0)
   - FirebaseCore (5.1.9):
     - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseDatabase (5.0.4):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 5.1)
+    - leveldb-library (~> 1.18)
   - FirebaseInstanceID (3.3.0):
     - FirebaseCore (~> 5.1)
     - GoogleUtilities/Environment (~> 5.3)
@@ -54,6 +61,7 @@ PODS:
   - GoogleUtilities/UserDefaults (5.3.6):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.1)
+  - leveldb-library (1.20)
   - LLSimpleCamera (4.2.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
@@ -64,6 +72,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
+  - Firebase/Database
   - FLNiceSpinner
   - LLSimpleCamera (~> 4.1)
 
@@ -74,11 +83,13 @@ SPEC REPOS:
     - FirebaseAuth
     - FirebaseAuthInterop
     - FirebaseCore
+    - FirebaseDatabase
     - FirebaseInstanceID
     - FLNiceSpinner
     - GoogleAppMeasurement
     - GoogleUtilities
     - GTMSessionFetcher
+    - leveldb-library
     - LLSimpleCamera
     - nanopb
 
@@ -88,14 +99,16 @@ SPEC CHECKSUMS:
   FirebaseAuth: 4a5cc5fc2d1721e509e24699b93ebc3d94b1e195
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
   FirebaseCore: 8f49b70f57ab5cbb032ef41d64992ded21606459
+  FirebaseDatabase: 0621689f77528d62b47e1c06ca737c4c19275d1a
   FirebaseInstanceID: e2fa4cb35ef5558c200f7f0ad8a53e212215f93e
   FLNiceSpinner: 9e0080e2c8de70f2c44bae16ae539bb051136b24
   GoogleAppMeasurement: 98b71f5e04142793729a5ef23e5b96651ff4b70f
   GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
+  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   LLSimpleCamera: ed7813ce4827ff3e34c6af159c99b5b56e54d1c6
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: 0feb0e6b87f5c9d455ad050604c6bbb1610cacb9
+PODFILE CHECKSUM: fac11e7c37c74b703f6aa474872eb4c84043edb5
 
 COCOAPODS: 1.5.3
